@@ -1,0 +1,11 @@
+/* MapComponent.css */
+
+.map-container {
+    position: relative;
+  }
+  
+  .map-image {
+    width: 800px;
+    height: auto;
+  }
+  

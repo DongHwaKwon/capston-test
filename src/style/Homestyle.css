@@ -1,0 +1,90 @@
+/* HomeStyle.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* 추가 스타일 */
+  .search-toggle-container {
+    text-align: right;
+    margin-top: 10px;
+    position: absolute;
+    top: 20px; /* 상단 여백 조절 */
+    right: 20px; /* 우측 여백 조절 */
+    z-index: 2; /* 검색창 위에 표시되도록 설정 */
+  }
+  
+  /* 수정된 스타일 */
+  .search-container-home {
+    max-width: 600px;
+    margin-bottom: 20px;
+    transition: max-width 0.3s ease, opacity 1s ease;
+    opacity: 1;
+    position: absolute;
+    top: 20px; /* 상단 여백 조절 */
+    left: 20px; /* 좌측 여백 조절 */
+    z-index: 1;
+  }
+  
+  .search-container-home.open {
+    max-width: 100%;
+    opacity: 0;
+  }
+  
+  .search-toggle-home {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-toggle-home:hover {
+    background-color: #e5b200;
+  }
+  
+  form.home {
+    display: flex;
+  }
+  
+  input.home {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  button.home {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button.home:hover {
+    background-color: #007bb5;
+  }
+  
+  .content-placeholder-home {
+    max-width: 700px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border: 2px solid #000;
+    padding: 300px;
+  }
+
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 또는 레이아웃에 따라 필요한 다른 flex 속성 */
+  }
+  
