@@ -1,0 +1,46 @@
+/* MarkerDetail.css */
+.marker-detail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .marker-detail-popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+  
+  .marker-detail-popup h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .marker-detail-popup p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .close-button {
+    background: lightcoral;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50%;
+  }
+  
+  .close-button:hover {
+    background: #217dbb;
+  }
+  

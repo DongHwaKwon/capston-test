@@ -5,35 +5,21 @@
     align-items: center;
     padding: 20px;
   }
+/* 수정된 스타일 */
+.search-container-home {
+  width: 750px;
+  height: 100px;
+  margin: 0 auto; /* 가로 중앙 정렬 */
+  transition: width 0.3s ease, height 0.3s ease, opacity 1s ease;
+  opacity: 1;
+  position: absolute;
+  top: 20px; /* 상단 여백 조절 */
+  left: 50%; /* 가로 중앙 정렬을 위해 좌표를 50%로 설정 */
+  transform: translateX(-50%); /* 가로 중앙 정렬을 위해 50%만큼 이동 */
+  z-index: 1;
+}
   
-  /* 추가 스타일 */
-  .search-toggle-container {
-    text-align: right;
-    margin-top: 10px;
-    position: absolute;
-    top: 20px; /* 상단 여백 조절 */
-    right: 20px; /* 우측 여백 조절 */
-    z-index: 2; /* 검색창 위에 표시되도록 설정 */
-  }
-  
-  /* 수정된 스타일 */
-  .search-container-home {
-    max-width: 600px;
-    margin-bottom: 20px;
-    transition: max-width 0.3s ease, opacity 1s ease;
-    opacity: 1;
-    position: absolute;
-    top: 20px; /* 상단 여백 조절 */
-    left: 20px; /* 좌측 여백 조절 */
-    z-index: 1;
-  }
-  
-  .search-container-home.open {
-    max-width: 100%;
-    opacity: 0;
-  }
-  
-  .search-toggle-home {
+.search-toggle-home {
     background-color: #ffcc00;
     color: #000;
     border: none;
@@ -88,3 +74,8 @@
     align-items: center;  /* 또는 레이아웃에 따라 필요한 다른 flex 속성 */
   }
   
+  .search-close{
+    width: 750px;
+    height: 50px;
+    background-color: lightblue;
+  }

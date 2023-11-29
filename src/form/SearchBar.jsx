@@ -1,81 +1,86 @@
+// SearchBar.jsx
 import React, { useState } from "react";
+import SearchResults from "./SearchResults";
+import appleimg1 from "../img/apple1.png";
+import appleimg2 from "../img/apple2.png";
+import VirtualKeyboard from '../atom/VirtualKeyboard'; // 수정: VirtualKeyboard import 추가
 
-const SearchBar = () => {
+const SearchBar = ({ onProductDetails }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(true);
+  const [allProducts, setAllProducts] = useState([
+    { id: 1, name: "[엔비사과 4~6입/봉 (1.3kg내외)] 엔비사과 4~6입/봉 (1.3kg내외)", price: "16,900", imageURL: appleimg1, coordinates: { x: 0, y: 0 } },
+    { id: 2, name: "[당도선별] 유명산지 청송사과 1.5kg (봉)", price: "16,900", imageURL: appleimg2, coordinates: { x: 100, y: 100 } },
+  ]);
   const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearchToggle = () => {
-    setIsSearchOpen((prevIsSearchOpen) => !prevIsSearchOpen);
-  };
+  const [showResults, setShowResults] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isMarkerVisible, setIsMarkerVisible] = useState(false);
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    const filteredResults = allProducts.filter(product =>
+      product.name.includes(query)
+    );
+    setSearchResults(filteredResults);
+
+    setShowResults(query.length > 0);
   };
 
-  const handleSearchSubmit = async (e) => {
+  const handleSearchSubmit = (e) => {
     e.preventDefault();
+    setShowResults(true);
+    setSelectedProduct(null);
+  };
 
-    try {
-      // 서버로 검색 요청 보내기
-      const response = await fetch('/api/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: searchQuery,
-        }),
-      });
+  const handleProductFocus = (productId) => {
+    const product = allProducts.find(p => p.id === productId);
+    setSelectedProduct(product);
+  };
 
-      if (!response.ok) {
-        throw new Error('검색 요청이 실패했습니다.');
-      }
+  const handleCloseResults = () => {
+    setShowResults(false);
+    setSelectedProduct(null);
+  };
 
-      const result = await response.json();
-      setSearchResults(result.result);
-    } catch (error) {
-      console.error(error);
-    }
+  const onShowMap = () => {
+    setShowResults(false);
+    setSelectedProduct(null);
+    setIsMarkerVisible(true);
+    onProductDetails(selectedProduct);
   };
 
   return (
-    <div>
-      <div className="search-toggle-container">
-        <button
-          className="search-toggle-home"
-          onClick={handleSearchToggle}
-          onAnimationEnd={() => setIsSearchOpen(false)}
-        >
-          {isSearchOpen ? '검색창 열기' : '검색창 닫기'}
+    <div className="search-container-home">
+      <form onSubmit={handleSearchSubmit} className="form home">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          placeholder="상품명 검색"
+          className="input home"
+          onFocus={() => setIsMarkerVisible(false)} // 수정: 검색창에 focus되면 Marker를 숨김
+        />
+        <VirtualKeyboard onProductDetails={onProductDetails} /> {/* 수정: VirtualKeyboard 추가 */}
+        <button type="submit" className="button home">
+          검색
         </button>
-      </div>
-      <div className={`search-container-home ${isSearchOpen ? 'open' : ''}`}>
-        <form onSubmit={handleSearchSubmit} className="form home">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="상품명 검색"
-            className="input home"
+      </form>
+
+      {showResults && (
+        <>
+          <SearchResults
+            searchResults={searchResults}
+            onProductFocus={handleProductFocus}
+            onShowMap={onShowMap}
           />
-          <button type="submit" className="button home">
-            검색
+          <button onClick={handleCloseResults} className="button home search-close">
+            닫기
           </button>
-        </form>
-        {/* 검색 결과 표시 */}
-        {searchResults.length > 0 && (
-          <div className="search-results">
-            <h3>검색 결과</h3>
-            <ul>
-              {searchResults.map((item, index) => (
-                <li key={index}>{item.name} - 가격: {item.price}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-      </div>
+        </>
+      )}
+
     </div>
   );
 };

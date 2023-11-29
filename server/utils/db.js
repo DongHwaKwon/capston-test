@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const connectToDatabase = () => {
-  mongoose.connect('mongodb://localhost:27017/shoppingApp', {
+  mongoose.connect('mongodb://localhost:27017/capston-product-DB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -18,7 +18,8 @@ const connectToDatabase = () => {
     console.log('MongoDB에 연결되었습니다.');
   });
 
-  return db;
+  return db;  // 이 부분을 수정
 };
 
-module.exports = connectToDatabase();
+module.exports = connectToDatabase;  // 이 부분을 수정
+
