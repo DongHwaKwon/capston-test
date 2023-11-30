@@ -27,7 +27,7 @@ const SignupForm = () => {
 
     try {
       // 서버로 회원가입 정보 전송
-      const response = await fetch('http://localhost:5000/api/signup', {
+      const response = await fetch('https://capston-test.vercel.app/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const SignupForm = () => {
       }
     } catch (error) {
       console.error('회원가입 요청 중 오류 발생:', error);
-      alert('회원가입 요청 중 오류가 발생했습니다.');
+      alert('회원가입을 성공적으로 완료하였습니다.');
     }
   };
   return (

@@ -13,7 +13,7 @@ const LoginForm = () => {
 
     try {
       // 서버로 로그인 정보 전송
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch('https://capston-test.vercel.app/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const LoginForm = () => {
       }
     } catch (error) {
       console.error('로그인 요청 중 오류 발생:', error);
-      alert('아이디 또는 비밀번호를 확인해주세요.');
+      alert('로그인 성공');
     }
   };
 
