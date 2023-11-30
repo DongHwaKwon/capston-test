@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import MarkerDetail from './MarkerDetail';
 import markerImage from '../img/marker2.png';
+import '../style/Marker.css'
 
 const Marker = ({ coordinates, product, onRemove }) => {
   const [isDetailVisible, setIsDetailVisible] = useState(false);

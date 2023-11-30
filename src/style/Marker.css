@@ -1,0 +1,15 @@
+/* styles.css 또는 해당 CSS 파일에 추가 */
+
+.marker {
+    animation: fadeInOut 2.5s infinite; /* 1초 주기로 나타났다가 사라지도록 설정 */
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  

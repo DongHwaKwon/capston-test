@@ -1,4 +1,5 @@
-import * as actionTypes from './actionTypes';
+//authreducers.js
+import * as actionTypes from './actionTypes'; // 수정: 상위 폴더로 이동
 
 const initialState = {
   user: null,

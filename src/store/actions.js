@@ -1,3 +1,4 @@
+//actions.js
 import * as actionTypes from './actionTypes';
 
 export const loginSuccess = (user) => {
@@ -19,3 +20,9 @@ export const signupSuccess = (user) => {
     user,
   };
 };
+
+// export const setSearchQuery = (query) => ({
+//   type: actionTypes.SET_SEARCH_QUERY,
+//   payload: query,
+// });
+

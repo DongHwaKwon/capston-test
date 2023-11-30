@@ -11,9 +11,9 @@ const MarkerDetail = ({ product, onClose, onRemove }) => (
       <button onClick={onClose} className="close-button">
         닫기
       </button>
-      <button onClick={() => onRemove(product)} className="remove-button close-button">
+      {/* <button onClick={() => onRemove(product)} className="remove-button close-button">
         지도에서 이 상품 제거하기
-      </button>
+      </button> */}
     </div>
   </div>
 );

@@ -15,7 +15,6 @@ const HomePage = () => {
     <div className="home-container">
       <SearchBar onProductDetails={handleProductDetails} />
       <div className="home-content">
-        {/* 수정: MapComponent에 product 정보 전달 */}
         <MapComponent isMarkerVisible={selectedProduct !== null} product={selectedProduct} />
       </div>
     </div>
