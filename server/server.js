@@ -5,8 +5,7 @@ const corsMiddleware = require('./utils/cors');
 const autoRoutes = require('./routes/authRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // 로컬 개발 시 기본 포트는 5000번으로 설정
-
+const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(corsMiddleware);
 app.use(express.static(path.join(__dirname, '../public')));
