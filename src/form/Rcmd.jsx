@@ -6,7 +6,7 @@ import allProducts from '../atom/productdata';
 const RecommendationButton = () => {
   const [showPopup, setShowPopup] = useState(false);
 
-  const recommendedProducts = allProducts.slice(1,9);
+  const recommendedProducts = allProducts.slice(1,7);
   
 //   [
 //     { name: '[당도선별] 유명산지 청송사과 1.5kg (봉)', price: '₩16,900', image: '/* 사과 이미지 URL */' },

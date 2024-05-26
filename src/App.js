@@ -7,6 +7,7 @@ import InitialPage from './pages/InitialPage';
 import HomePage from './pages/HomePage';
 import GNB from './pages/GNB'; // GNB 컴포넌트 추가
 import './App.css';
+import StoreMap from './pages/exampleRoot';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -20,6 +21,7 @@ const App = () => {
       <div className="App">
         <GNB isAuthenticated={isAuthenticated} onLogout={handleLogout} />
         <Routes>
+          <Route path='/ex' element={<StoreMap />} />
           <Route path="/" element={<InitialPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />

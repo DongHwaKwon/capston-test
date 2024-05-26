@@ -6,10 +6,10 @@ import '../style/MarkerDetail.css';
 const MarkerDetail = ({ product, onClose, onRemove }) => (
   <div className="marker-detail-container">
     <div className="marker-detail-popup">
-      <p>이 위치의 상품: {product.name}</p>
-      <p>가격: {product.price}</p>
+      <p>상품명: {product.name}</p>
+      <p>가격: {product.price}원</p>
       <button onClick={onClose} className="close-button">
-        닫기
+        x
       </button>
       {/* <button onClick={() => onRemove(product)} className="remove-button close-button">
         지도에서 이 상품 제거하기

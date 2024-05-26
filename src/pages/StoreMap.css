@@ -1,0 +1,42 @@
+.store-map {
+  display: flex;
+  flex-direction: column;
+  width: 780px;
+  height: 480px;
+  border: 2px solid #000;
+}
+
+.map-row {
+  display: flex;
+  flex: 1;
+}
+
+.map-cell {
+  flex: 1;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.wall {
+  background-color: #979797;
+}
+
+.aisle {
+  background-color: #fff;
+}
+
+.corner {
+  background-color: #ffeb3b;
+}
+
+.path {
+  background-color: #4caf50;
+}
+
+.corner.snacks {
+  background-color: #ff9800;
+}
+
+.corner.bakery {
+  background-color: #e91e63;
+}

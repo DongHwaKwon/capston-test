@@ -1,30 +1,78 @@
-// GNB.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+// // GNB.jsx
+import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import QRCodeComponent from '../atom/QRcodComponent';
 import '../style/GNB.css';
 
+const account_img = "/img/account_circle.png";
+
 const GNB = ({ isAuthenticated, onLogout }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleAccountImageClick = () => {
+    // 현재 경로가 '/home'일 때만 팝업창을 열고 닫음
+    if (location.pathname !== '/home') {
+      console.log("경로 이동")
+      navigate('/login');
+      return;
+    }
+    console.log("경로 미이동")
+
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
     <div className="gnb-container">
-      {/* 중앙 상단 메인 로고(또는 대체 텍스트) */}
       <div className="logo-container">
         <Link to="/home">
-          <img src="../img/Logo.png" alt="Main Logo" />
+          <img src="/img/Logo.png" alt="Main Logo" />
         </Link>
       </div>
 
-      {/* 우측 상단 로그인 및 로그아웃 관리 */}
       <div className="login-management">
-        {isAuthenticated ? (
+      <img
+              src={account_img}
+              alt="로그"
+              className="account_image"
+              onClick={handleAccountImageClick}
+            />
+            {isPopupOpen && (
+              <div className="account-popup">
+                <img src={account_img} alt="Account" />
+                <div className="user-info">
+                  <p>권동화 고객님</p>
+                  <p>wkdrhr5063@localhost:3000</p>
+                  <QRCodeComponent />
+                </div>
+              </div>
+            )}
+        {/* {isAuthenticated ? (
           <>
             <span>로그인 중</span>
             <button onClick={onLogout}>로그아웃</button>
+            <img
+              src={account_img}
+              alt="로그"
+              className="account_image"
+              onClick={handleAccountImageClick}
+            />
+            {isPopupOpen && (
+              <div className="account-popup">
+                <img src={account_img} alt="Account" />
+                <div className="user-info">
+                  <p>이름: John Doe</p>
+                  <p>아이디: johndoe123</p>
+                </div>
+              </div>
+            )}
           </>
         ) : (
-          <>
-            <Link to="/login">로그인</Link>
-          </>
-        )}
+          <Link to="/login">
+            <img src={account_img} alt="로그인" className="account_image" />
+          </Link>
+        )} */}
       </div>
     </div>
   );

@@ -32,11 +32,11 @@
 }
 
 .search-result-box.focused {
-  background-color: #a49090; /* 빨간색 배경으로 변경 */
+  background-color: #dcdcdc; /* 빨간색 배경으로 변경 */
 }
 
 .search-flot{
-  height: 100px;
+  height: 50px;
   background-color: coral;
 }
 
