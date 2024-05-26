@@ -6,13 +6,13 @@
 //유제품 74 21
 //
 //양념,오일 74 52
-//쌀, 잡곡 25,22
+//쌀, 잡곡 28,22
 //해산물 36 73
 //베이커리 74 5
 //통조림 58 32
-//면류 47.5 20
-//건강식품 25 52
-//과자 47.5 31
+//면류 50.5 20
+//건강식품 28 52
+//과자 50.5 31
 //간편식 41.2 50
 
 import fruit_img1 from "../img/fruit_img1.png";
@@ -71,46 +71,46 @@ const allProducts = [
     name: "[엔비사과 4~6입/봉 (1.3kg내외)] 엔비사과 4~6입/봉 (1.3kg내외)",
     price: "16,900", 
     imageURL: fruit_img1, 
-    coordinates: { x: 25, y: 35 } },
+    coordinates: { x: 28, y: 35 } },
   { id: 2, 
     name: "[당도선별] 유명산지 청송사과 1.5kg (봉)", 
     price: "16,900", 
     imageURL: fruit_img3, 
-    coordinates: { x: 25, y: 35 } },
+    coordinates: { x: 28, y: 35 } },
   {
     id: 3,
     name: "[고려은단] 비타민C1000 이지+비타민D 120정",
     price: "13,800",
     imageURL: health_img1,
-    coordinates : {x: 25,y:52}
+    coordinates : {x: 28,y:52}
     },
     {
     id: 4,
     name: "[고려은단] 알티지 오메가3",
     price: "14,900",
     imageURL: health_img2,
-    coordinates : {x: 25,y:52}
+    coordinates : {x: 28,y:52}
     },
     {
     id: 6,
     name: "[자연주의] 저탄소인증 하우스 감귤 1kg/팩",
     price: "9,480",
     imageURL: fruit_img2,
-    coordinates : {x: 25,y:35}
+    coordinates : {x: 28,y:35}
     },
     {
     id: 7,
     name: "[롯데웰푸드] 롯데 아몬드빼빼로132G",
     price: "4,380",
     imageURL: snack_img1,
-    coordinates : {x: 47.5,y:31}
+    coordinates : {x: 48.5,y:31}
     },
     {
     id: 8,
     name: "[농심] 자갈치90g",
     price: "1,360",
     imageURL: snack_img2,
-    coordinates : {x: 47.5,y:31}
+    coordinates : {x: 48.5,y:31}
     },
     {
     id: 9,
@@ -121,7 +121,7 @@ const allProducts = [
     },
     {
     id: 10,
-    name: "[비비고] CJ 비비고 소고기 장조림 125g",
+    name: "[비비고] CJ 비비고 소고기 장조림 128g",
     price: "3,680",
     imageURL: sidedish_img2,
     coordinates : {x: 60,y:73}
@@ -131,7 +131,7 @@ const allProducts = [
     name: "[농심] 올리브 짜파게티 (140gx5입)",
     price: "4,880",
     imageURL: noodlecan_img1,
-    coordinates : {x: 47.5,y:20}
+    coordinates : {x: 48.5,y:20}
     },
     {
     id: 12,
@@ -184,7 +184,7 @@ const allProducts = [
     },
     {
     id: 19,
-    name: "[인도] 점보 칵테일 새우살 (21-25) (450g)",
+    name: "[인도] 점보 칵테일 새우살 (21-28) (450g)",
     price: "16,980",
     imageURL: seafood_img1,
     coordinates : {x: 36,y:73}
@@ -201,14 +201,14 @@ const allProducts = [
     name: "[2023년산]이맛쌀 20kg",
     price: "59,880",
     imageURL: rice_img1,
-    coordinates : {x: 25,y:22}
+    coordinates : {x: 28,y:22}
     },
     {
     id: 22,
     name: "[미동농산] 해바라기씨 500g",
     price: "4,000",
     imageURL: rice_img2,
-    coordinates : {x: 25,y:22}
+    coordinates : {x: 28,y:22}
     },
     {
     id: 23,
@@ -225,7 +225,7 @@ const allProducts = [
     coordinates : {x: 74,y:52}
     },
     {
-    id: 25,
+    id: 28,
     name: "[피코크] 에이 클래스 우유 900ml (1A등급)(매일유업)",
     price: "2,432",
     imageURL: milk_img1,
@@ -257,14 +257,14 @@ const allProducts = [
     name: "[흙당근(1kg/봉)] 흙당근(1kg/봉)",
     price: "6,480",
     imageURL: vege_img1,
-    coordinates : {x: 25,y:35}
+    coordinates : {x: 28,y:35}
     },
     {
     id: 30,
     name: "[파머스픽] 청경채 300g",
     price: "2,180",
     imageURL: vege_img2,
-    coordinates : {x: 25,y:35}
+    coordinates : {x: 28,y:35}
     },
     {
     id: 31,
@@ -282,7 +282,7 @@ const allProducts = [
     },
     {
     id: 33,
-    name: "[맥심] 모카골드 마일드 커피믹스 250입(쓱배송)",
+    name: "[맥심] 모카골드 마일드 커피믹스 280입(쓱배송)",
     price: "32,780",
     imageURL: cafe_img1,
     coordinates : {x: 58,y:21}
