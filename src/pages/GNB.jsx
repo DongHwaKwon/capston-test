@@ -43,7 +43,7 @@ const GNB = ({ isAuthenticated, onLogout }) => {
                 <img src={account_img} alt="Account" />
                 <div className="user-info">
                   <p>권동화 고객님</p>
-                  <p>wkdrhr5063@localhost:3000</p>
+                  <p>capstontest1234</p>
                   <QRCodeComponent />
                 </div>
               </div>

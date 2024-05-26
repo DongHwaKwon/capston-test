@@ -33,7 +33,7 @@ const RecommendationButton = () => {
         <div className="popup">
           <div className="popup-inner">
             <div className="popup-header">
-              <h2>AI가 추천하는 맞춤 상품</h2>
+              <h2>고객님을 위한 추천 상품이에요</h2>
               <button className="close-button" onClick={handleClosePopup}>x</button>
             </div>
             <ul className="product-list">
