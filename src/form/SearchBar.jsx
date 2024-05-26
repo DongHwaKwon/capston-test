@@ -1,5 +1,3 @@
-// SearchBar.js
-
 import React, { useState, useRef } from "react";
 import SearchResults from "./SearchResults";
 import ProductData from "../atom/productdata"; // productsData.js 파일에서 필요한 경로로 조정
@@ -11,6 +9,7 @@ const SearchBar = ({ onProductDetails }) => {
   const [showResults, setShowResults] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isMarkerVisible, setIsMarkerVisible] = useState(false);
+  const [searchHistory, setSearchHistory] = useState([]);
   const inputRef = useRef(null);
 
   const handleSearchChange = (e) => {
@@ -27,7 +26,11 @@ const SearchBar = ({ onProductDetails }) => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setShowResults(true);
+    if (searchQuery.trim() !== '') {
+      setSearchHistory([...searchHistory, searchQuery]);
+      setSearchQuery('');
+      setShowResults(true);
+    }
   };
 
   const handleProductFocus = (productId) => {
@@ -45,6 +48,10 @@ const SearchBar = ({ onProductDetails }) => {
     setSelectedProduct(null);
     setIsMarkerVisible(true);
     onProductDetails(selectedProduct);
+  };
+
+  const handleDeleteHistoryItem = (index) => {
+    setSearchHistory(searchHistory.filter((_, i) => i !== index));
   };
 
   return (
@@ -68,16 +75,31 @@ const SearchBar = ({ onProductDetails }) => {
 
       {showResults && (
         <>
+        {searchHistory.length > 0 && (
+        <div className="search-history">
+          <ul>
+            {searchHistory.map((item, index) => (
+              <li key={index}>
+                {item}
+                <button onClick={() => handleDeleteHistoryItem(index)}>삭제</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
           <SearchResults
             searchResults={searchResults}
             onProductFocus={handleProductFocus}
             onShowMap={onShowMap}
           />
+          
           <button onClick={handleCloseResults} className="button home search-close">
             닫기
           </button>
         </>
       )}
+
+      
     </div>
   );
 };
